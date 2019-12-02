@@ -11,7 +11,7 @@ public class JwtUserFactory {
 
     public static JwtUser create(User user) {
         return new JwtUser(user.getId(), user.getEmail(), user.getPassword(), user,
-                mapToGrantedAuthorities(new ArrayList<String>(Collections.singletonList("ROLE " + user.getRole()))), user.isEnabled());
+                mapToGrantedAuthorities(new ArrayList<>(Collections.singletonList("ROLE " + user.getRole()))), user.isEnabled());
     }
 
     private static Collection<? extends GrantedAuthority> mapToGrantedAuthorities(List<String> authorities) {

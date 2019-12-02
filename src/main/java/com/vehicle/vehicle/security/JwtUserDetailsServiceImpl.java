@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Primary
 public class JwtUserDetailsServiceImpl implements UserDetailsService {
 
-    @Autowired UserRepository userRepository;
+    @Autowired private UserRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
